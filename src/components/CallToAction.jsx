@@ -21,7 +21,6 @@ function CallToAction() {
           </div>
         </div>
       </div>
-      <h1 className="text-center lead">Popular Mytineraries</h1>
       <Carousel />
     </>
   );
