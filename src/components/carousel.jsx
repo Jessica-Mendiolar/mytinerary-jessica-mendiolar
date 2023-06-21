@@ -67,7 +67,7 @@ export default function Carousel() {
 
   return (
     <>
-      <h2 className="text-center mb-5">Popular MYtineraries</h2>
+      <h2 className="text-center mb-5">Popular MyTineraries</h2>
       <div className="carousel-container">
         <Swiper
           autoplay={{
