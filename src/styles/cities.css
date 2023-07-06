@@ -101,6 +101,16 @@
     color: #000;
 }
 
+.input_container {
+    margin-top: 1rem;
+    width: 75%;
+    gap: .8rem;
+}
+
+.input_container input {
+    width: 100%;
+}
+
 @media (min-width: 768px) {
     .slide {
         width: 80%;
@@ -128,6 +138,10 @@
 
     .city_detail-container img {
         height: 25rem;
+    }
+
+    .input_container {
+        width: 80%;
     }
 }
 
@@ -160,5 +174,13 @@
 
     .city_detail-container img {
         height: 34rem;
+    }
+
+    .input_container {
+        width: 90%;
+    }
+
+    .input_container input {
+        width: 30%;
     }
 }
