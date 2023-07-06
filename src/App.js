@@ -3,9 +3,9 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "./styles/App.css";
 import Navbar from "./components/Navbar";
 import CallToAction from "./components/CallToAction";
-import CityDetails from "./components/CityDetail";
 import Footer from "./components/Footer";
 import Cities from "./components/Cities";
+import CityDetail from "./components/CityDetail";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path="*" element={<CallToAction />}></Route>
         <Route path="/home" element={<CallToAction />}></Route>
         <Route path="/cities" element={<Cities />}></Route>
-        <Route path='/cityDetails/:id' element={<CityDetails/>}></Route>
+        <Route path="/cityDetails/:id" element={<CityDetail />}></Route>
       </Routes>
       <Footer />
     </div>

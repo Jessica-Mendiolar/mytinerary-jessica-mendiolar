@@ -3,7 +3,6 @@
 }
 
 .title {
-    padding-top: 15%;
     font-size: 2rem;
 }
 
@@ -23,6 +22,83 @@
 
 .swiper-button-next {
     display: none;
+}
+
+.container_city {
+    width: 80%;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.city {
+    width: 15rem;
+    height: 12rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.point {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.city h4,
+.city p {
+    color: #fff;
+}
+
+.city_detail-container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.city_detail-container h1 {
+    margin: 1rem 0 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.city_detail-container h4 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.city_detail-container img {
+    width: 12rem;
+    height: 15rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.city_detail-container span {
+    font-weight: bold;
+}
+
+.city_detail-container p {
+    margin: 1rem 0;
+    text-align: left;
+    font-size: 1rem;
+    word-spacing: 0.15rem;
+    line-height: 1.5rem;
+}
+
+.arrow_container {
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid #000;
+    background-color: #fff;
+    position: fixed;
+    cursor: pointer;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 100%;
+}
+
+.arrow {
+    font-size: 1.5rem;
+    color: #000;
 }
 
 @media (min-width: 768px) {
@@ -45,10 +121,44 @@
         display: block;
         margin-top: -3.4rem;
     }
+
+    .city {
+        width: 17rem;
+    }
+
+    .city_detail-container img {
+        height: 25rem;
+    }
 }
 
 @media (min-width: 988px) {
     .slide img {
         height: 18rem;
+    }
+
+    .container_city {
+        width: 90%;
+        gap: 6rem;
+    }
+
+    .city {
+        width: 21rem;
+        height: 13rem;
+    }
+
+    .city_detail-container h1 {
+        font-size: 2rem;
+    }
+
+    .city_detail-container h4 {
+        font-size: 1.6rem;
+    }
+
+    .city_detail-container p {
+        font-size: 1.3rem;
+    }
+
+    .city_detail-container img {
+        height: 34rem;
     }
 }
