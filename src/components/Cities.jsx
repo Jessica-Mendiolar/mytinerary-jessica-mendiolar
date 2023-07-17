@@ -3,8 +3,11 @@ import axios from "axios";
 import { BsFillGeoFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import "../styles/cities.css";
+import { useDispatch } from "react-redux";
+import citiesActions from "../redux/reducers/actions/citiesActions";
 
 function Cities() {
+  const dispatch = useDispatch()
   const [cities, setCities] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
