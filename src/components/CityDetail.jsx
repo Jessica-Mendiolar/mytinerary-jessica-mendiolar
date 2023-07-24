@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { BsArrowLeft } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import "../styles/citydetails.css"
 
 function CityDetail() {
   const [city, setCity] = useState();
@@ -33,16 +34,17 @@ function CityDetail() {
       </Link>
       {city && (
         <div className="city_detail-container" key={city._id}>
-          <h1>{city.name}</h1>
+          <div className="card_description">
+            <h1>{city.name}</h1>  
           <h4>{city.country}</h4>
-          <img className="w-100" src={city.image} alt={city.name} />
-          <p>
-            <span>About:</span> {city.description}
-          </p>
-          <p>
-            <span>Population:</span> {city.population}
-          </p>
-        </div>
+          <img className="img" src={city.image} alt={city.name} />
+          </div>
+          
+          <div className="card">         
+            <p className="city_description">About: </p>{city.description}
+             <h3 className="city_population">Population: </h3>  {city.population} 
+          </div> 
+          </div>    
       )}
     </>
   );

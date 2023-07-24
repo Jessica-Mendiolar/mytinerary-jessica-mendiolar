@@ -40,7 +40,7 @@ function Cities() {
         <input
           type="text"
           className="form-control"
-          placeholder="Search"
+          placeholder= "Type to search..."
           value={searchTerm}
           onChange={handleSearch}
         />
