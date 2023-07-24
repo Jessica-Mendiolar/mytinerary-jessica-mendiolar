@@ -40,7 +40,7 @@ function CityDetail() {
           <img className="img" src={city.image} alt={city.name} />
           </div>
           
-          <div className="card">         
+          <div className="card_detail">         
             <p className="city_description">About: </p>{city.description}
              <h3 className="city_population">Population: </h3>  {city.population} 
           </div> 
