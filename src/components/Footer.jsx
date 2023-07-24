@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/footer.css';
 import { BsFacebook, BsTwitter, BsLinkedin, BsInstagram } from "react-icons/bs";
-
+import { Link as LinkRouter } from "react-router-dom";
 
 
 function Footer() {
@@ -22,37 +22,37 @@ function Footer() {
                         </a>
                     </div>
                     <div className="sb__footer-links_div">
-                        <h4>Resources</h4>
+                        <h4>Contact</h4>
                         <a href="/resources">
-                            <p>Resources center</p>
+                            <p>+54 11 4531 2123</p>
                         </a>
                         <a href="/resources">
-                            <p>Testimonials</p>
+                            <p>Mytinerary@gmail.com</p>
                         </a>
                         <a href="/resources">
-                            <p>STV</p>
+                            <p>Buenos Aires, Argentina.</p>
                         </a>
                     </div>
                     <div className="sb__footer-links_div">
                         <h4>Partners</h4>
                         <a href="/employer">
-                            <p>Swing Tech</p>
+                            <p>Mindhub</p>
                         </a>
                     </div>
                     <div className="sb__footer-links_div">
-                        <h4>Company</h4>
-                        <a href="/about">
+                        <h4>MyTinerary</h4>
+                        <LinkRouter to="/home">
+                            <p>Home</p>
+                        </LinkRouter>
+                        <LinkRouter to="/cities">
+                            <p>Cities</p>
+                        </LinkRouter>
+                        <LinkRouter to="/about">
                             <p>About</p>
-                        </a>
-                        <a href="/press">
-                            <p>Press</p>
-                        </a>
-                        <a href="/career">
-                            <p>Career</p>
-                        </a>
-                        <a href="/contact">
+                        </LinkRouter>
+                        <LinkRouter to="/contact">
                             <p>Contact</p>
-                        </a>
+                        </LinkRouter>
                     </div>
                     <div className="sb__footer-links_div">
                         <h4>Coming soon on</h4>
