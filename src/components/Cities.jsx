@@ -34,6 +34,7 @@ function Cities() {
 
   return (
     <>
+    <br />
       <h1 className="title text-center lead mb-0">Cities</h1>
       <div className="input_container d-flex justify-content-end mx-auto">
         <input
