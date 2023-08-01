@@ -1,87 +1,109 @@
-import React from "react";
-import '../styles/footer.css';
-import { BsFacebook, BsTwitter, BsLinkedin, BsInstagram } from "react-icons/bs";
+import "../styles/footer.css";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
+const Footer = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
+  const [sendEmail, setSendEmail] = useState(false);
 
-function Footer() {
-    return (
-        <div className="footer">
-            <div className="sb__footer section__padding">
-                <div className="sb__footer-links">
-                    <div className="sb__footer-links_div">
-                        <h4>For Business</h4>
-                        <a href="/employer">
-                            <p>Employer</p>
-                        </a>
-                        <a href="/healthplan">
-                            <p>healthplan</p>
-                        </a>
-                        <a href="/individual">
-                            <p>individual</p>
-                        </a>
-                    </div>
-                    <div className="sb__footer-links_div">
-                        <h4>Resources</h4>
-                        <a href="/resources">
-                            <p>Resources center</p>
-                        </a>
-                        <a href="/resources">
-                            <p>Testimonials</p>
-                        </a>
-                        <a href="/resources">
-                            <p>STV</p>
-                        </a>
-                    </div>
-                    <div className="sb__footer-links_div">
-                        <h4>Partners</h4>
-                        <a href="/employer">
-                            <p>Swing Tech</p>
-                        </a>
-                    </div>
-                    <div className="sb__footer-links_div">
-                        <h4>Company</h4>
-                        <a href="/about">
-                            <p>About</p>
-                        </a>
-                        <a href="/press">
-                            <p>Press</p>
-                        </a>
-                        <a href="/career">
-                            <p>Career</p>
-                        </a>
-                        <a href="/contact">
-                            <p>Contact</p>
-                        </a>
-                    </div>
-                    <div className="sb__footer-links_div">
-                        <h4>Coming soon on</h4>
-                        <div className="socialmedia">
-                            <p><BsFacebook /></p>
-                            <p><BsTwitter /></p>
-                            <p><BsLinkedin /></p>
-                            <p><BsInstagram /></p>
-                        </div>
-                    </div>
-                </div>
-                <hr></hr>
-                <div className="sb__footer-below">
-                    <div className="sb__footer-copyright">
-                        <p>
-                            @{new Date().getFullYear()} MyTinerary. All right reserved.
-                        </p>
-                    </div>
-                    <div className="sb__footer-below-links">
-                        <a href="/terms"><div><p>Terms & Conditions</p></div></a>
-                        <a href="/privacy"><div><p>Privacy</p></div></a>
-                        <a href="/security"><div><p>Security</p></div></a>
-                        <a href="/cookie"><div><p>Cookie Declaration</p></div></a>
-                    </div>
-                </div>
+  const handleSend = (data) => {
+    setSendEmail(true);
+    setTimeout(() => {
+      setSendEmail(false);
+      Swal.fire({
+        icon: "success",
+        title: "We are processing your request",
+        text: "Thanks for subscribing to our newsletter",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      reset();
+    }, 2000);
+  };
 
+  return (
+    <>
+      <footer className="mt-auto" id="footer">
+        <div className="container d-flex justify-content-center">
+          <div className="row">
+            <div className="col-md-4 text-center text-md-start">
+              <h3>INFORMATION</h3>
+              <ul className="list-unstyled">
+                <li className="py-1">
+                  <Link to={"/cities"}>Cities</Link>
+                </li>
+                <li className="py-1">
+                  <Link to={"/about"}>About</Link>
+                </li>
+                <li className="py-1">
+                  <Link to={""}>Privacy policies</Link>
+                </li>
+                <li className="py-1">
+                  <Link to={""}>Terms and Conditions</Link>
+                </li>
+              </ul>
             </div>
+            <div className="col-md-4 text-center text-md-start">
+              <h3>MY ACCOUNT</h3>
+              <ul className="list-unstyled">
+                <li className="py-1">
+                  <Link to={"/login"}>Login</Link>
+                </li>
+                <li className="py-1">
+                  <Link to={"/register"}>Register</Link>
+                </li>
+                <li className="py-1">
+                  <Link to={""}>refunds</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="col-md-4 text-center text-md-start">
+              <h3 className="text-decoration-none">NEWSLETTER</h3>
+              <p className="text-center text-md-start">
+                Subscribe to our newsletters now and stay up to date with
+                exclusive offers.
+              </p>
+              <form onSubmit={handleSubmit(handleSend)}>
+                <div>
+                  <input
+                    type="email"
+                    className="form-control w-100"
+                    placeholder="Enter email"
+                    id="user_email"
+                    required
+                    {...register("user_email", {
+                      required: "Email is required",
+                      pattern: {
+                        value:
+                          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
+                        message: "Please enter a valid email address",
+                      },
+                      minLength: 5,
+                      maxLength: 100,
+                    })}
+                  />
+                  <div className="text-danger mt-2 texto_email">
+                    {errors.email?.message}
+                  </div>
+                </div>
+                <button className="w-100" type="submit">
+                  {sendEmail ? "Sending..." : "Send"}
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-    )
-}
+      </footer>
+    </>
+  );
+};
 
 export default Footer;

@@ -1,6 +1,43 @@
-.container {
-    height: 55vh;
+:root {
+    --color-primario: #232229;
+    --color-secundario: #fff;
+    --color-terciario: #ff6347;
 }
+
+.section_cities {
+    margin-top: 4rem;
+    height: 190rem;
+}
+
+.container_input {
+    margin: .8rem auto 0;
+    width: 15rem;
+    background-color: var(--color-secundario);
+    border-radius: .3rem;
+    position: relative;
+    border: 1px solid var(--color-primario);
+}
+
+article .container_input input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 0;
+    outline: none;
+    font-size: 0.7rem;
+    background: transparent;
+}
+
+.icon_search {
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 100%;
+    font-size: 0.8rem;
+    color: var(--color-primario);
+    position: absolute;
+    right: 0.2rem;
+    margin-top: 0.03rem;
+}
+
 
 .title {
     font-size: 2rem;
@@ -35,6 +72,7 @@
     height: 12rem;
     background-size: cover;
     background-position: center;
+    text-decoration: none;
 }
 
 .point {
@@ -101,17 +139,22 @@
     color: #000;
 }
 
-.input_container {
-    margin-top: 1rem;
-    width: 75%;
-    gap: .8rem;
+div a .star {
+    left: 12rem;
+    top: .5rem;
+    z-index: 10;
 }
 
-.input_container input {
-    width: 100%;
+.container_other {
+    opacity: 1;
 }
+
 
 @media (min-width: 768px) {
+    .section_cities {
+        height: 100rem;
+    }
+
     .slide {
         width: 80%;
     }
@@ -140,12 +183,40 @@
         height: 25rem;
     }
 
-    .input_container {
-        width: 80%;
+    div .container_input {
+        margin-top: 1.5rem;
+        width: 35.5%;
+        margin-left: auto;
+        margin-right: 4.8rem;
+    }
+
+    div .container_input input {
+        width: 100%;
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .icon_search {
+        width: 1.7rem;
+        height: 1.7rem;
+        border-radius: 100%;
+        font-size: 0.9rem;
+        color: var(--color-primario);
+        position: absolute;
+        right: 0.2rem;
+        margin-top: 0.03rem;
+    }
+
+    div a .star {
+        top: 0;
     }
 }
 
 @media (min-width: 988px) {
+    .section_cities {
+        height: 85rem;
+    }
+
     .slide img {
         height: 18rem;
     }
@@ -158,6 +229,13 @@
     .city {
         width: 21rem;
         height: 13rem;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .city:hover {
+        background-size: 120%;
+        transition: .3s;
     }
 
     .city_detail-container h1 {
@@ -176,11 +254,53 @@
         height: 34rem;
     }
 
-    .input_container {
-        width: 90%;
+    section article .container_input {
+        margin-top: 2.5rem;
+        width: 24.6%;
+        padding: 0.1rem;
+        font-size: 0.8rem;
+        margin-right: 4.3rem;
     }
 
-    .input_container input {
-        width: 30%;
+    .icon_search {
+        width: 1.3rem;
+        height: 1.3rem;
+        font-size: 0.9rem;
+        right: .6rem;
     }
+
+    div a .star {
+        left: 16.5rem;
+        top: .5rem;
+    }
+
+    section article .container_input input {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+        outline: none;
+        border: 0;
+    }
+
+    section article .container_input input:focus {
+        box-shadow: 0 0 0 0;
+    }
+
+    .container_other {
+        width: 100%;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: opacity 0.3s, transform 0.3s;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0.6rem;
+    }
+
+    .city:hover .container_other {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+
 }

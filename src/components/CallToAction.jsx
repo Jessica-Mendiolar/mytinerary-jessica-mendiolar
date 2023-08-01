@@ -1,29 +1,24 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/callToAction.css";
 import Carousel from "./carousel";
-import { Link } from "react-router-dom";
 
-function CallToAction() {
+const CallToAction = () => {
   return (
-    <>
-      <div>
-        <div className="card mx-auto p-2 firts-card">
-          <img src="./images/tokyo.jpg" className="card-img" alt="citie" />
-          <div className="card-body text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-            <h5 className="card-title">MyTinerary</h5>
-            <p className="card-text">
-              Find your perfect trip, designed by insiders who know and love
-              their cities!.
-            </p>
-            <Link to="/cities" className="btn btn-secondary shadow-sm">
-              Get started
-            </Link>
-          </div>
-        </div>
-      </div>
-      <Carousel />
-    </>
+    <section className="container_dishes">
+      <article className="d-flex flex-column align-items-center justify-content-center">
+        <h1 className="text-center">
+          Our favorite tour operators in one place
+        </h1>
+        <h3 className="text-center">
+          Discover exciting itineraries with our search tool
+        </h3>
+        <Link to="/cities" className="button_call">
+          Get started
+        </Link>
+        {/* <Carousel /> */}
+      </article>
+    </section>
   );
-}
+};
 
 export default CallToAction;
