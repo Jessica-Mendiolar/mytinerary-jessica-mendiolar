@@ -1,7 +1,7 @@
 :root {
-    --color-primario: #232229;
-    --color-secundario: #fff;
-    --color-terciario: #ff6347;
+    --color-primary: #232229;
+    --color-secondary: #fff;
+    --color-tertiary: #ff6347;
 }
 
 .container_detail {
@@ -14,14 +14,14 @@
     text-decoration: none;
     font-weight: 500;
     font-size: 0.7rem;
-    color: var(--color-primario);
+    color: var(--color-primary);
 }
 
 .star {
     top: 1rem;
     right: 1rem;
     font-size: 2rem;
-    color: var(--color-secundario);
+    color: var(--color-secondary);
 }
 
 .pagination_detail {
@@ -30,7 +30,7 @@
 }
 
 .pagination_detail-color {
-    color: var(--color-terciario);
+    color: var(--color-tertiary);
     font-weight: 500;
     font-size: 0.7rem;
     width: 30%;
@@ -50,7 +50,7 @@
     top: 1rem;
     right: 1rem;
     font-size: 2rem;
-    color: var(--color-secundario);
+    color: var(--color-secondary);
 }
 
 .container_detail h2 {
@@ -76,8 +76,8 @@
 
 .button_itinerary {
     font-size: 0.8rem;
-    border: 2px solid var(--color-terciario);
-    background-color: var(--color-terciario);
+    border: 2px solid var(--color-tertiary);
+    background-color: var(--color-tertiary);
     padding: 0.8rem;
     border-radius: .3rem;
     font-weight: bold;
@@ -85,16 +85,16 @@
 
 .container_detail .button_itinerary {
     font-size: 0.8rem;
-    border: 2px solid var(--color-terciario);
-    background-color: var(--color-terciario);
-    color: var(--color-secundario);
+    border: 2px solid var(--color-tertiary);
+    background-color: var(--color-tertiary);
+    color: var(--color-secondary);
     padding: 0.8rem;
     border-radius: .3rem;
 }
 
 .container_detail .button_itinerary:hover {
     background-color: transparent;
-    color: var(--color-terciario);
+    color: var(--color-tertiary);
     cursor: pointer;
     transition: .3s;
 }

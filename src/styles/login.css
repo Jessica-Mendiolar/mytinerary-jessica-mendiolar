@@ -1,7 +1,6 @@
 :root {
-    --color-primario: #232229;
-    --color-secundario: #fff;
-    --color-terciario: #ff6347;
+    --color-primary: #232229;
+    --color-secondary: #fff;
 }
 
 .container_login {
@@ -10,9 +9,9 @@
 }
 
 .button_login {
-    background-color: var(--color-primario);
-    border: 2px solid var(--color-primario);
-    color: var(--color-secundario);
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    color: var(--color-secondary);
     border-radius: .3rem;
     font-weight: bold;
     padding: .6rem;
@@ -20,7 +19,7 @@
 
 .button_login:hover {
     background-color: transparent;
-    color: var(--color-primario);
+    color: var(--color-primary);
     transition: .3s;
     cursor: pointer;
 }
@@ -30,7 +29,7 @@
     height: 16rem;
     background-size: cover;
     background-position: center;
-    background-color: var(--color-secundario);
+    background-color: var(--color-secondary);
 }
 
 @media(min-width:767px) {
@@ -53,9 +52,9 @@
     }
 
     .button_login {
-        background-color: var(--color-primario);
-        border: 2px solid var(--color-primario);
-        color: var(--color-secundario);
+        background-color: var(--color-primary);
+        border: 2px solid var(--color-primary);
+        color: var(--color-secondary);
         border-radius: .3rem;
         padding: .8rem;
     }

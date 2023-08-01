@@ -1,21 +1,19 @@
 :root {
-    --color-primario: #232229;
-    --color-secundario: #fff;
-    --color-terciario: #ff6347;
+    --color-primary: #232229;
+    --color-secondary: #fff;
 }
 
 .section_cities {
     margin-top: 4rem;
-    height: 190rem;
 }
 
 .container_input {
     margin: .8rem auto 0;
     width: 15rem;
-    background-color: var(--color-secundario);
+    background-color: var(--color-secondary);
     border-radius: .3rem;
     position: relative;
-    border: 1px solid var(--color-primario);
+    border: 1px solid var(--color-primary);
 }
 
 article .container_input input {
@@ -32,7 +30,7 @@ article .container_input input {
     height: 1.7rem;
     border-radius: 100%;
     font-size: 0.8rem;
-    color: var(--color-primario);
+    color: var(--color-primary);
     position: absolute;
     right: 0.2rem;
     margin-top: 0.03rem;
@@ -151,10 +149,6 @@ div a .star {
 
 
 @media (min-width: 768px) {
-    .section_cities {
-        height: 100rem;
-    }
-
     .slide {
         width: 80%;
     }
@@ -201,7 +195,7 @@ div a .star {
         height: 1.7rem;
         border-radius: 100%;
         font-size: 0.9rem;
-        color: var(--color-primario);
+        color: var(--color-primary);
         position: absolute;
         right: 0.2rem;
         margin-top: 0.03rem;
@@ -213,10 +207,6 @@ div a .star {
 }
 
 @media (min-width: 988px) {
-    .section_cities {
-        height: 85rem;
-    }
-
     .slide img {
         height: 18rem;
     }

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "../styles/callToAction.css";
-import Carousel from "./carousel";
 
 const CallToAction = () => {
   return (
@@ -15,7 +14,6 @@ const CallToAction = () => {
         <Link to="/cities" className="button_call">
           Get started
         </Link>
-        {/* <Carousel /> */}
       </article>
     </section>
   );

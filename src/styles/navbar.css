@@ -1,7 +1,7 @@
 :root {
-    --color-primario: #232229;
-    --color-secundario: #fff;
-    --color-terciario: #ff6347;
+    --color-primary: #232229;
+    --color-secondary: #fff;
+    --color-tertiary: #ff6347;
 }
 
 header nav {
@@ -10,7 +10,7 @@ header nav {
     left: 0;
     right: 0;
     z-index: 99;
-    background-color: var(--color-primario);
+    background-color: var(--color-primary);
     padding: 0.7rem;
     transition: 0.3s;
 }
@@ -19,16 +19,16 @@ header nav {
 header nav .nav_brand {
     text-decoration: none;
     font-weight: bold;
-    color: var(--color-secundario);
+    color: var(--color-secondary);
 }
 
 header nav .nav_brand span {
-    color: var(--color-terciario);
+    color: var(--color-tertiary);
 }
 
 header nav svg {
     font-size: 1.4rem;
-    color: var(--color-secundario);
+    color: var(--color-secondary);
 }
 
 header nav .menu_overlay {
@@ -48,7 +48,7 @@ header nav .menu_overlay-visible {
 header nav .menu_overlay ul {
     height: 100%;
     width: 65%;
-    background: var(--color-primario);
+    background: var(--color-primary);
     position: absolute;
     top: 0;
     right: 0;
@@ -70,7 +70,7 @@ header nav .menu_overlay ul {
 
 .icon_close svg {
     font-size: 2rem;
-    color: var(--color-secundario);
+    color: var(--color-secondary);
 }
 
 header nav .menu_overlay .ul-visible {
@@ -83,7 +83,7 @@ header nav .menu_overlay ul li {
 
 header nav .menu_link {
     text-decoration: none;
-    color: var(--color-secundario);
+    color: var(--color-secondary);
     font-weight: bold;
     padding-bottom: 0.4rem;
 }
@@ -93,7 +93,7 @@ header nav .menu_link::after {
     display: block;
     width: 0;
     height: 2px;
-    background: var(--color-secundario);
+    background: var(--color-secondary);
     transition: 0.3s;
 }
 
@@ -106,7 +106,7 @@ header nav .menu_link:hover::after {
     margin: 0 auto;
     width: 8.3rem;
     height: 8.3rem;
-    background-color: var(--color-secundario);
+    background-color: var(--color-secondary);
     border-radius: .4rem;
 }
 
@@ -119,7 +119,7 @@ header nav .menu_link:hover::after {
 .container_edit {
     width: 2.2rem;
     height: 2.2rem;
-    background-color: var(--color-primario);
+    background-color: var(--color-primary);
     border-radius: 100%;
     top: 1.1rem;
     right: 4.5rem;
@@ -127,7 +127,7 @@ header nav .menu_link:hover::after {
 
 .container_edit i {
     font-size: .8rem;
-    color: var(--color-secundario);
+    color: var(--color-secondary);
 }
 
 @media (min-width: 767px) {
@@ -211,6 +211,6 @@ header nav .menu_link:hover::after {
 
     .container_edit i {
         font-size: .8rem;
-        color: var(--color-secundario);
+        color: var(--color-secondary);
     }
 }
