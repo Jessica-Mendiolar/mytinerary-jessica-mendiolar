@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "../styles/cities.css";
 import { ClipLoader } from "react-spinners";
 import { getUser } from "../helpers/queries";
-import Carousel from "./carousel";
 
 function Cities() {
   const [cities, setCities] = useState([]);
@@ -47,79 +46,76 @@ function Cities() {
     citie.name.toLowerCase().includes(input.toLowerCase())
   );
   return (
-    <>
-      <section className="section_cities">
-        <article>
-          <h1 className="title text-center lead mb-0">Cities</h1>
-          <div className="container_input d-flex align-items-center justify-content-end">
-            <input
-              type="text"
-              placeholder="Search"
-              onChange={(e) => handleSearch(e)}
-              className="form-control"
-            />
-            <div
-              className={`icon_search ${
-                input.length > 0 ? "d-none" : "d-flex"
-              } align-items-center justify-content-center`}
-            >
-              <BsSearch />
-            </div>
+    <section>
+      <article className="section_cities">
+        <h1 className="title text-center lead mb-0">Cities</h1>
+        <div className="container_input d-flex align-items-center justify-content-end">
+          <input
+            type="text"
+            placeholder="Search"
+            onChange={(e) => handleSearch(e)}
+            className="form-control"
+          />
+          <div
+            className={`icon_search ${
+              input.length > 0 ? "d-none" : "d-flex"
+            } align-items-center justify-content-center`}
+          >
+            <BsSearch />
           </div>
-          {showSpinner ? (
-            <div
-              className="d-flex align-items-center justify-content-center"
-              style={{ height: "18rem" }}
-            >
-              <ClipLoader color="#232229" size={35} />
-            </div>
-          ) : (
-            <div
-              className={`container_city d-flex flex-wrap justify-content-center my-4 align-items-center ${
-                filteredCities.length < 3
-                  ? "justify-content-center"
-                  : "justify-content-md-between"
-              }
+        </div>
+        {showSpinner ? (
+          <div
+            className="d-flex align-items-center justify-content-center"
+            style={{ height: "18rem" }}
+          >
+            <ClipLoader color="#232229" size={35} />
+          </div>
+        ) : (
+          <div
+            className={`container_city d-flex flex-wrap justify-content-center my-4 align-items-center ${
+              filteredCities.length < 3
+                ? "justify-content-center"
+                : "justify-content-md-between"
+            }
           `}
-              style={{ height: "15rem" }}
-            >
-              {filteredCities.length > 0 ? (
-                filteredCities.map((city) => (
-                  <Link
-                    key={city._id}
-                    to={`/cityDetails/${city._id}`}
-                    className="city d-flex flex-column justify-content-end p-3 position-relative"
-                    style={{
-                      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${city.image})`,
-                    }}
-                  >
-                    {userDB &&
-                      userDB.role !== "admin" &&
-                      userDB.favorites.find((fav) => fav === city._id) && (
-                        <div className="star position-absolute">
-                          <BsStarFill style={{ color: "#FFD700" }} />
-                        </div>
-                      )}
-                    <div className="container_other d-flex flex-column">
-                      <h4 className="mb-0">{city.name}</h4>
-                      <div className="point d-flex align-items-center gap-1">
-                        <BsFillGeoFill className="mb-0" />
-                        <p className="mb-0">{city.country}</p>
+            style={{ height: "15rem" }}
+          >
+            {filteredCities.length > 0 ? (
+              filteredCities.map((city) => (
+                <Link
+                  key={city._id}
+                  to={`/cityDetails/${city._id}`}
+                  className="city d-flex flex-column justify-content-end p-3 position-relative"
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${city.image})`,
+                  }}
+                >
+                  {userDB &&
+                    userDB.role !== "admin" &&
+                    userDB.favorites.find((fav) => fav === city._id) && (
+                      <div className="star position-absolute">
+                        <BsStarFill style={{ color: "#FFD700" }} />
                       </div>
+                    )}
+                  <div className="container_other d-flex flex-column">
+                    <h4 className="mb-0">{city.name}</h4>
+                    <div className="point d-flex align-items-center gap-1">
+                      <BsFillGeoFill className="mb-0" />
+                      <p className="mb-0">{city.country}</p>
                     </div>
-                  </Link>
-                ))
-              ) : filteredCities.length === 0 && !spinnerLoading ? (
-                <p className="mb-0">No cities found</p>
-              ) : (
-                <ClipLoader color="#232229" size={35} />
-              )}
-            </div>
-          )}
-          {/* <Carousel /> */}
-        </article>
-      </section>
-    </>
+                  </div>
+                </Link>
+              ))
+            ) : filteredCities.length === 0 && !spinnerLoading ? (
+              <p className="mb-0">No cities found</p>
+            ) : (
+              <ClipLoader color="#232229" size={35} />
+            )}
+          </div>
+        )}
+      </article>
+    </section>
   );
 }
 

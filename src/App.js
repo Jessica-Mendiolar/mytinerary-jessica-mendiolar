@@ -23,7 +23,9 @@ function App() {
         <Route path="/user/register" element={<Login />}></Route>
         <Route path="*" element={<Error404 />}></Route>
       </Routes>
-      {location.pathname !== "/" && <Footer />}
+      {location.pathname !== "/" && location.pathname !== "/cities" && (
+        <Footer />
+      )}
     </>
   );
 }

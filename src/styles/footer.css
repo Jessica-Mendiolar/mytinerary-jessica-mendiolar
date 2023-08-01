@@ -5,6 +5,7 @@
 }
 
 footer {
+    margin-top: 40rem;
     padding: 1rem 0;
     background-color: var(--color-primary);
 }
